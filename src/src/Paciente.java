@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+import java.util.Comparator;
+public class Paciente implements Comparator {
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
 
-public class Paciente {
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
 }
