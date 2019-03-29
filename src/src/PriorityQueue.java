@@ -1,4 +1,6 @@
-public interface PriorityQueue <E extends Comparable<E>>
+import java.util.Comparator;
+
+public interface PriorityQueue <E extends Comparator<E>>
 {
     public E getFirst();
     // pre: !isEmpty()

@@ -9,8 +9,9 @@ import java.util.Scanner ;
 import java.io.*;
 public class main {
     public static void main(String [] args) throws IOException {
+        VectorHeap vectorHeap = new VectorHeap();
         Scanner input = new Scanner(System.in);
-        System.out.println("ingrese donde se localiza el archivo con las cartas: ");// bufferReader codigo basado de los ejemplos encontrados en la pagina : https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
+        System.out.println("ingrese donde se localiza el archivo con los pacientes: ");// bufferReader codigo basado de los ejemplos encontrados en la pagina : https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
         String fileName = input.next();
         File file = new File(fileName);
         FileReader fr = new FileReader(file);
@@ -18,9 +19,10 @@ public class main {
         String line;
         while ((line = br.readLine()) != null) {
             //process the line
-            String[] parts = line.split("[|]");// se separa el string que da el buffer reader
-
-
+            String[] parts = line.split(",");// se separa el string que da el buffer reader
+            Paciente pac = new Paciente(parts[0],parts[1],parts[2]);
+            vectorHeap.add((Comparable) pac);
         }
+        
     }
 }
