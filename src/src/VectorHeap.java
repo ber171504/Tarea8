@@ -1,8 +1,8 @@
 
-import java.util.Comparator;
+
 import java.util.Vector;
 
-public class VectorHeap<E extends Comparable<E> & Comparator<E>> implements PriorityQueue<E> {
+public class VectorHeap<E extends Comparable<E> > implements PriorityQueue<E> {
 
     protected Vector<E> data; // the data, kept in heap order
 
@@ -68,12 +68,15 @@ public class VectorHeap<E extends Comparable<E> & Comparator<E>> implements Prio
 
     @Override
     public boolean isEmpty() {
+        if(size()>0){
+            return true;
+        }
         return false;
     }
 
     @Override
     public int size() {
-        return 0;
+        return data.size();
     }
 
     @Override
@@ -114,11 +117,7 @@ public class VectorHeap<E extends Comparable<E> & Comparator<E>> implements Prio
 
     @Override
     public E getFirst() {
-        E minVal = getFirst();
-        data.set(0, data.get(data.size() - 1));
-        data.setSize(data.size() - 1);
-        if (data.size() < 1) pushDownRoot(0);
-        return minVal;
+        return data.get(0);
     }
 
     public E remove()

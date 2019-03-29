@@ -1,5 +1,5 @@
-import java.util.Comparator;
-public class Paciente implements Comparator {
+
+public class Paciente implements Comparable<Paciente> {
     String Nombre;
     String Problema;
     String Severidad;
@@ -9,14 +9,9 @@ public class Paciente implements Comparator {
         this.Problema = p;
         this.Severidad = s;
     }
+
     @Override
-    public int compare(Object o1, Object o2) {
+    public int compareTo(Paciente o) {
         return 0;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        return false;
-    }
-
 }
