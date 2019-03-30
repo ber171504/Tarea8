@@ -12,6 +12,7 @@ public class Paciente implements Comparable<Paciente> {
 
     @Override
     public int compareTo(Paciente o) {
-        return 0;
+        return this.Severidad.compareTo(((Paciente)o).Severidad);
+
     }
 }

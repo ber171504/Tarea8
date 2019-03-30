@@ -63,15 +63,16 @@ public class VectorHeap<E extends Comparable<E> > implements PriorityQueue<E> {
     // post: value is added to priority queue
     {
         data.add(value);
-        percolateUp(data.size() - 1);
+
+        percolateUp(data.size()-1);
     }
 
     @Override
     public boolean isEmpty() {
         if(size()>0){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     @Override
